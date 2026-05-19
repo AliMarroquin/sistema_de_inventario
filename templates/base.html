@@ -1,0 +1,45 @@
+{% extendens 'base.html'%}
+
+{% block tittle % } Dashboard{%endblock%}
+
+{% block page_title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<!--Cards-->
+<div class="cards">
+
+  <div class="card">
+    <h3>Total de Equipos</h3>
+    <P>154</P>
+  </div> 
+
+  <div class="card">
+   </h3>Equipos Activos</h3>
+   <p>128</p>
+  </div>
+
+  <div class="card">
+   </h3>En Reparación</h3>
+   <p>15</p>
+  </div>
+  
+  <div class="card">
+   </h3>Equipos de Baja</h3>
+   <p>11</p>
+  </div>
+
+</div>
+
+<!--Chart Box-->
+<div class="charts_contanier">
+  <h2>Distribucion por Tipo deEquipo</h2>
+
+  <div class="fake-chart">
+    <div class=""circle></div>
+  </div>
+</div>
+
+{% enblock %}

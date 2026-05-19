@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario TI Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2 class="logo">Inventario TI</h2>
+
+        <ul>
+            <li class="active">Dashboard</li>
+            <li>Inventario</li>
+            <li>Registro</li>
+            <li>Configuración</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <h1>Dashboard</h1>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total de Equipos</h3>
+                <p>154</p>
+            </div>
+
+            <div class="card">
+                <h3>Equipos Activos</h3>
+                <p>128</p>
+            </div>
+
+            <div class="card">
+                <h3>En Reparación</h3>
+                <p>15</p>
+            </div>
+
+            <div class="card">
+                <h3>Equipos de Baja</h3>
+                <p>11</p>
+            </div>
+
+        </div>
+
+        <!-- Chart Box -->
+        <div class="chart-container">
+            <h2>Distribución por Tipo de Equipo</h2>
+
+            <div class="fake-chart">
+                <div class="circle"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: #0f0f0f;
+    color: rgb(250, 247, 247);
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar{
+    width: 240px;
+    height: 100vh;
+    background-color: #001b5e;
+    padding: 25px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.logo{
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.sidebar ul{
+    list-style: none;
+}
+
+.sidebar li{
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar li:hover{
+    background-color: #0b43c9;
+}
+
+.active{
+    background-color: #0b43c9;
+}
+
+/* Main content */
+.main-content{
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    padding: 30px;
+}
+
+/* Topbar */
+.topbar{
+    width: 100%;
+    height: 70px;
+    background-color: #161616;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+    margin-bottom: 30px;
+}
+
+/* Cards */
+.cards{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.card{
+    flex: 1;
+    min-width: 220px;
+
+    background-color: #161616;
+    border: 2px solid #0b43c9;
+    border-radius: 20px;
+
+    padding: 25px;
+}
+
+.card h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.card p{
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Chart section */
+.chart-container{
+    background-color: #161616;
+    border: 2px solid #0b43c9;
+    border-radius: 20px;
+
+    padding: 30px;
+    min-height: 400px;
+}
+
+.chart-container h2{
+    margin-bottom: 30px;
+}
+
+.fake-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.circle{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+        #1e88ff 0% 40%,
+        #1565c0 40% 75%,
+        #42a5f5 75% 90%,
+        #64b5f6 90% 100%
+    );
+}
+
