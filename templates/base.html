@@ -1,45 +1,71 @@
-{% extendens 'base.html'%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
-{% block tittle % } Dashboard{%endblock%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block page_title %}
-Dashboard
-{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
 
-{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-<!--Cards-->
-<div class="cards">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <div class="card">
-    <h3>Total de Equipos</h3>
-    <P>154</P>
-  </div> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <div class="card">
-   </h3>Equipos Activos</h3>
-   <p>128</p>
-  </div>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <div class="card">
-   </h3>En Reparación</h3>
-   <p>15</p>
-  </div>
-  
-  <div class="card">
-   </h3>Equipos de Baja</h3>
-   <p>11</p>
-  </div>
+</head>
 
-</div>
+<body>
 
-<!--Chart Box-->
-<div class="charts_contanier">
-  <h2>Distribucion por Tipo deEquipo</h2>
+    <!-- Sidebar -->
+    <div class="sidebar">
 
-  <div class="fake-chart">
-    <div class=""circle></div>
-  </div>
-</div>
+        <h2 class="logo">Inventario TI</h2>
 
-{% enblock %}
+        <ul>
+
+            <li>
+                <a href="/">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="/inventario">Inventario TI</a>
+            </li>
+
+            <li>
+                <a href="/formulario">Registro</a>
+            </li>
+
+            <li>
+                <a href="#">Configuración</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+
+            <h1>
+                {% block page_title %}
+                Dashboard
+                {% endblock %}
+            </h1>
+
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+</body>
+</html>
