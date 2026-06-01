@@ -5,7 +5,7 @@ Inventario
 {% endblock %}
 
 {% block page_litle %}
-Inventario
+Inventario TI
 {% endblock %}
 
 {% block content %}
@@ -14,16 +14,14 @@ Inventario
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <div class="top-bar">
-    <input type="text" placeholder="Buscar Equipo..."
+
+    <input 
+    type="text" 
+    placeholder="Buscar Equipo..."
     class="search-input">
 
-    <select class="filter-select">
-        <option>Activo</option>
-        <option>En Reparación</option>
-        <option>Baja</option>
-    </select>
-
-    <input type="text"
+    <input 
+    type="text"
     placeholder="Buscar ubicación..."
     class="search-input">
 
@@ -40,58 +38,44 @@ Inventario
                 <th>Modelo</th>
                 <th>Serie</th>
                 <th>Usuario</th>
-                <th>Estado</th>
+                <th>Ubicación</th>
                 <th>Acciones</th>
             </tr>
         </thead>
 
-        <tbody> 
+        <tbody>
+
+            {% for equipo in equipos %}
 
             <tr>
-                <td>Laptop</td>
-                <td>Dell</td>
-                <td>AT3700</td>
-                <td>000001</td>
-                <td>Fabiola</td>
-                <td class="Activo">Activo</td>
+
+                <td>{{ equipo[1] }}</td>
+                <td>{{ equipo[2] }}</td>
+                <td>{{ equipo[3] }}</td>
+                <td>{{ equipo[4] }}</td>
+                <td>{{ equipo[10] }}</td>
+                <td>{{ equipo[11] }}</td>
 
                 <td class="actions">
-                    <button class="view-btn">
-                        <i class="bi bi-eye-fill"></i>
-                    </button>
 
-                    <button class="edit-btn">
+                    <a href="/ver/{{equipo[0]}}" class="view-btn">
+                        <i class="bi bi-eye-fill"></i>
+                    </a>
+
+                    <a href="/editar/{{equipo[0]}}" class="edit-btn">
                         <i class="bi bi-pencil-fill"></i>
-                    </button>
-                    
+                    </a>
+
                 </td>
 
             </tr>
 
-            <tr>
-                <td>PC</td>
-                <td>HP</td>
-                <td>HP-OO2</td>
-                <td>Admin</td>
-                <td>Soporte Técnico</td>
-                <td class="reparación">En Reparación</td> 
-
-                <td class="actions">
-
-                    <button class="view-btn">
-                        <i class="bi bi-eye-fill"></i>
-                    </button>
-
-                    <button class="edit-btn">
-                        <i class="bi bi-pencil-fill"></i>
-                    </button>
-                </td>
-                
-            </tr>
+            {% endfor %}
 
         </tbody>
 
     </table>
+
 </div>
 
 {% endblock %}

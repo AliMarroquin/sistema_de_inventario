@@ -143,6 +143,7 @@ body{
     );
 }
 
+
 /* ========================= */
 /* INVENTARIO */
 /* ========================= */
@@ -220,4 +221,371 @@ td{
 .reparacion{
     color: #facc15;
     font-weight: bold;
+}
+
+
+
+
+/* ========================= */
+/* REGISTRO */
+/* ========================= */
+
+.form-container{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.form-box{
+    flex: 1;
+    min-width: 350px;
+
+    background-color: #161616;
+    border: 2px solid #0b43c9;
+    border-radius: 20px;
+
+    padding: 25px;
+}
+
+.form-box h2{
+    margin-bottom: 20px;
+}
+
+.form-box form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box label{
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea{
+    background-color: #0f0f0f;
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    padding: 12px;
+    color: white;
+
+    outline: none;
+}
+
+.form-box textarea{
+    resize: none;
+    height: 100px;
+}
+
+.buttons{
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.save-btn{
+    background-color: #0b43c9;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cancel-btn{
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* FORMULARIO REGISTRO */
+
+.form-container{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.form-box{
+    flex: 1;
+    background-color: #161616;
+    border: 2px solid #0b43c9;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.form-box h2{
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.form-box form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box label{
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.form-box input,
+.form-box textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background-color: #0f0f0f;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-box textarea{
+    min-height: 120px;
+    resize: none;
+}
+
+.buttons{
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.save-btn,
+.cancel-btn{
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.save-btn{
+    background-color: #0b43c9;
+    color: white;
+}
+
+.save-btn:hover{
+    background-color: #1565c0;
+}
+
+.cancel-btn{
+    background-color: #333;
+    color: white;
+}
+
+.cancel-btn:hover{
+    background-color: #444;
+}
+
+
+/* ========================= */
+/* VER EQUIPO */
+/* ========================= */
+
+.profile-card,
+.timeline-card{
+
+    background: #1a1a1a;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+}
+
+.profile-header,
+.timeline-header{
+
+    padding: 18px 25px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+}
+
+.profile-header h2,
+.timeline-header h2{
+
+    margin: 0;
+    color: white;
+
+}
+
+.profile-content{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding: 25px;
+
+}
+
+.left-info,
+.right-info{
+
+    flex: 1;
+
+}
+
+.left-info p,
+.right-info p{
+
+    margin-bottom: 18px;
+
+    color: #e5e5e5;
+
+    font-size: 16px;
+
+}
+
+.software-section{
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    padding: 25px;
+
+}
+
+.software-section h3{
+
+    color: white;
+
+    margin-bottom: 12px;
+
+}
+
+.software-section p{
+
+    color: #d6d6d6;
+
+}
+
+/* TIMELINE */
+
+.timeline-body{
+
+    padding: 25px;
+
+}
+
+.timeline-item{
+
+    display: flex;
+
+    gap: 30px;
+
+    position: relative;
+
+    padding-bottom: 30px;
+
+}
+
+.timeline-item::before{
+
+    content: "";
+
+    position: absolute;
+
+    left: 165px;
+
+    top: 25px;
+
+    width: 2px;
+
+    height: 100%;
+
+    background: #1e90ff;
+
+}
+
+.timeline-item:last-child::before{
+
+    display: none;
+
+}
+
+.timeline-date{
+
+    width: 150px;
+
+    color: #3da5ff;
+
+    font-weight: bold;
+
+    position: relative;
+
+}
+
+.timeline-date::after{
+
+    content: "";
+
+    width: 14px;
+
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #1e90ff;
+
+    position: absolute;
+
+    right: -22px;
+
+    top: 4px;
+
+}
+
+.timeline-content{
+
+    flex: 1;
+
+    color: #e5e5e5;
+
+    line-height: 1.6;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .profile-content{
+
+        flex-direction: column;
+
+    }
+
+    .timeline-item{
+
+        flex-direction: column;
+
+    }
+
+    .timeline-item::before{
+
+        display: none;
+
+    }
+
 }

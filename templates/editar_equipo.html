@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Editar Equipo
+{% endblock %}
+
+{% block page_title %}
+Editar Equipo
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <!-- Columna izquierda -->
+    <div class="form-box">
+
+        <h2>Información Técnica</h2>
+
+        <form method="POST">
+
+            <label>Tipo de Equipo</label>
+            <input
+                type="text"
+                name="tipo_equipo"
+                value="{{ equipo[1] }}"
+            >
+
+            <label>Marca</label>
+            <input
+                type="text"
+                name="marca"
+                value="{{ equipo[2] }}"
+            >
+
+            <label>Modelo</label>
+            <input
+                type="text"
+                name="modelo"
+                value="{{ equipo[3] }}"
+            >
+
+            <label>Número de Serie</label>
+            <input
+                type="text"
+                name="numero_serie"
+                value="{{ equipo[4] }}"
+            >
+
+            <label>Procesador</label>
+            <input
+                type="text"
+                name="procesador"
+                value="{{ equipo[5] }}"
+            >
+
+            <label>Memoria RAM</label>
+            <input
+                type="text"
+                name="ram"
+                value="{{ equipo[6] }}"
+            >
+
+            <label>Disco Duro</label>
+            <input
+                type="text"
+                name="disco_duro"
+                value="{{ equipo[7] }}"
+            >
+
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="form-box">
+
+        <h2>Información de Control</h2>
+
+            <label>Sistema Operativo</label>
+            <input
+                type="text"
+                name="sistema_operativo"
+                value="{{ equipo[8] }}"
+            >
+
+            <label>Software Instalado</label>
+            <textarea
+                name="software_instalado"
+            >{{ equipo[9] }}</textarea>
+
+            <label>Usuario Asignado</label>
+            <input
+                type="text"
+                name="usuario_asignado"
+                value="{{ equipo[10] }}"
+            >
+
+            <label>Ubicación Física</label>
+            <input
+                type="text"
+                name="ubicacion"
+                value="{{ equipo[11] }}"
+            >
+
+            <label>Estado</label>
+            <input
+                type="text"
+                name="estado"
+                value="{{ equipo[12] }}"
+            >
+
+            <div class="buttons">
+
+                <button type="submit" class="save-btn">
+                    Guardar Cambios
+                </button>
+
+                <a href="/inventario" class="cancel-btn">
+                    Cancelar
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

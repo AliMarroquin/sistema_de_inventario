@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Detalle del Equipo
+{% endblock %}
+
+{% block page_title %}
+Detalle del Equipo e Historial
+{% endblock %}
+
+{% block content %}
+
+<!-- FICHA TÉCNICA -->
+
+<div class="profile-card">
+
+    <div class="profile-header">
+
+        <h2>
+            {{ equipo[1] }} {{ equipo[2] }} {{ equipo[3] }}
+            - SN: {{ equipo[4] }}
+        </h2>
+
+    </div>
+
+    <div class="profile-content">
+
+        <!-- COLUMNA IZQUIERDA -->
+
+        <div class="left-info">
+
+            <p>
+                <strong>Tipo de Equipo:</strong>
+                {{ equipo[1] }}
+            </p>
+
+            <p>
+                <strong>Marca:</strong>
+                {{ equipo[2] }}
+            </p>
+
+            <p>
+                <strong>Modelo:</strong>
+                {{ equipo[3] }}
+            </p>
+
+            <p>
+                <strong>Número de Serie:</strong>
+                {{ equipo[4] }}
+            </p>
+
+            <p>
+                <strong>Procesador:</strong>
+                {{ equipo[5] }}
+            </p>
+
+            <p>
+                <strong>RAM:</strong>
+                {{ equipo[6] }}
+            </p>
+
+            <p>
+                <strong>Disco Duro:</strong>
+                {{ equipo[7] }}
+            </p>
+
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+
+        <div class="right-info">
+
+            <p>
+                <strong>Sistema Operativo:</strong>
+                {{ equipo[8] }}
+            </p>
+
+            <p>
+                <strong>Usuario Asignado:</strong>
+                {{ equipo[10] }}
+            </p>
+
+            <p>
+                <strong>Ubicación:</strong>
+                {{ equipo[11] }}
+            </p>
+
+            <p>
+                <strong>Estado:</strong>
+                {{ equipo[12] }}
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- SOFTWARE -->
+
+    <div class="software-section">
+
+        <h3>Software Instalado</h3>
+
+        <p>
+            {{ equipo[9] }}
+        </p>
+
+    </div>
+
+</div>
+
+<!-- HISTORIAL -->
+
+<div class="timeline-card">
+
+    <div class="timeline-header">
+
+        <h2>Línea de Tiempo</h2>
+
+    </div>
+
+    <div class="timeline-body">
+
+        {% if historial %}
+
+            {% for cambio in historial %}
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    {{ cambio[1] }}
+                </div>
+
+                <div class="timeline-content">
+                    {{ cambio[0] }}
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>No hay registros en el historial.</p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
