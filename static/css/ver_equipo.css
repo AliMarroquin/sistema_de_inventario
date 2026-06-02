@@ -1,0 +1,199 @@
+/*========================= */
+/* VER EQUIPO */
+/* ========================= */
+
+.profile-card,
+.timeline-card{
+
+    background: #1a1a1a;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+}
+
+.profile-header,
+.timeline-header{
+
+    padding: 18px 25px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+}
+
+.profile-header h2,
+.timeline-header h2{
+
+    margin: 0;
+    color: white;
+
+}
+
+.profile-content{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding: 25px;
+
+}
+
+.left-info,
+.right-info{
+
+    flex: 1;
+
+}
+
+.left-info p,
+.right-info p{
+
+    margin-bottom: 18px;
+
+    color: #e5e5e5;
+
+    font-size: 16px;
+
+}
+
+.software-section{
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    padding: 25px;
+
+}
+
+.software-section h3{
+
+    color: white;
+
+    margin-bottom: 12px;
+
+}
+
+.software-section p{
+
+    color: #d6d6d6;
+
+}
+
+/* TIMELINE */
+
+.timeline-body{
+
+    padding: 25px;
+
+}
+
+.timeline-item{
+
+    display: flex;
+
+    gap: 30px;
+
+    position: relative;
+
+    padding-bottom: 30px;
+
+}
+
+.timeline-item::before{
+
+    content: "";
+
+    position: absolute;
+
+    left: 165px;
+
+    top: 25px;
+
+    width: 2px;
+
+    height: 100%;
+
+    background: #1e90ff;
+
+}
+
+.timeline-item:last-child::before{
+
+    display: none;
+
+}
+
+.timeline-date{
+
+    width: 150px;
+
+    color: #3da5ff;
+
+    font-weight: bold;
+
+    position: relative;
+
+}
+
+.timeline-date::after{
+
+    content: "";
+
+    width: 14px;
+
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #1e90ff;
+
+    position: absolute;
+
+    right: -22px;
+
+    top: 4px;
+
+}
+
+.timeline-content{
+
+    flex: 1;
+
+    color: #e5e5e5;
+
+    line-height: 1.6;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .profile-content{
+
+        flex-direction: column;
+
+    }
+
+    .timeline-item{
+
+        flex-direction: column;
+
+    }
+
+    .timeline-item::before{
+
+        display: none;
+
+    }
+
+}
