@@ -8,6 +8,10 @@ Editar Equipo
 Editar Equipo
 {% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/registro.css')}}">
+{% endblock %}
+
 {% block content %}
 
 <div class="form-container">

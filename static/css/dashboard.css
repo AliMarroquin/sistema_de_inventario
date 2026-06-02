@@ -1,0 +1,65 @@
+/* ========================= */
+/* DASHBOARD */
+/* ========================= */
+
+.cards{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.card{
+    flex: 1;
+    min-width: 220px;
+
+    background-color: #161616;
+    border: 2px solid #0b43c9;
+    border-radius: 20px;
+
+    padding: 25px;
+}
+
+.card h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.card p{
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.chart-container{
+    background-color: #161616;
+    border: 2px solid #0b43c9;
+    border-radius: 20px;
+
+    padding: 30px;
+    min-height: 400px;
+}
+
+.chart-container h2{
+    margin-bottom: 30px;
+}
+
+.fake-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.circle{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+        #1e88ff 0% 40%,
+        #1565c0 40% 75%,
+        #42a5f5 75% 90%,
+        #64b5f6 90% 100%
+    );
+}
