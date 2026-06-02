@@ -4,6 +4,11 @@
 Detalle del Equipo
 {% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static', 
+filename='css/ver_equipo.css')}}">
+{% endblock %}
+
 {% block page_title %}
 Detalle del Equipo e Historial
 {% endblock %}
