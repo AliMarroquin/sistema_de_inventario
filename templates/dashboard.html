@@ -9,46 +9,61 @@ Dashboard
 {% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 {% endblock %}
 
 {% block content %}
 
-<!-- Cards -->
+<!-- CARDS -->
+
 <div class="cards">
 
     <div class="card">
+
         <h3>Total de Equipos</h3>
-        <p>154</p>
+
+        <p>{{ total_equipos }}</p>
+
     </div>
 
     <div class="card">
-        <h3>Equipos Disponibles</h3>
-        <p>128</p>
+
+        <h3>Equipos Activos</h3>
+
+        <p>{{ equipos_activos }}</p>
+
     </div>
 
     <div class="card">
+
         <h3>Usuarios Asignados</h3>
-        <p>15</p>
+
+        <p>{{ usuarios_asignados }}</p>
+
     </div>
 
     <div class="card">
+
         <h3>Total Ubicaciones</h3>
-        <p>11</p>
+
+        <p>{{ ubicaciones }}</p>
+
     </div>
 
 </div>
 
-<!-- Chart -->
+<!-- GRÁFICA -->
+
 <div class="chart-container">
 
     <h2>Distribución por Tipo de Equipo</h2>
 
     <div class="fake-chart">
+
         <div class="circle"></div>
+
     </div>
 
 </div>
 
 {% endblock %}
-

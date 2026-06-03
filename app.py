@@ -14,11 +14,50 @@ conexion = psycopg2.connect(
 
 cursor = conexion.cursor()
 
-# DASHBOARD
+#====================#
+#  DASHBOARD #
+#====================#
+
 @app.route('/')
 def dashboard():
-    return render_template('dashboard.html')
 
+    # Total equipos
+    cursor.execute("SELECT COUNT(*) FROM equipos")
+    total_equipos = cursor.fetchone()[0]
+
+    # Equipos activos
+    cursor.execute("""
+        SELECT COUNT(*)
+        FROM equipos
+        WHERE estado = 'Activo'
+    """)
+    equipos_activos = cursor.fetchone()[0]
+
+    # Usuarios asignados
+    cursor.execute("""
+        SELECT COUNT(DISTINCT usuario_asignado)
+        FROM equipos
+        WHERE usuario_asignado IS NOT NULL
+        AND usuario_asignado <> ''
+    """)
+    usuarios_asignados = cursor.fetchone()[0]
+
+    # Ubicaciones
+    cursor.execute("""
+        SELECT COUNT(DISTINCT ubicacion)
+        FROM equipos
+        WHERE ubicacion IS NOT NULL
+        AND ubicacion <> ''
+    """)
+    ubicaciones = cursor.fetchone()[0]
+
+    return render_template(
+        'dashboard.html',
+        total_equipos=total_equipos,
+        equipos_activos=equipos_activos,
+        usuarios_asignados=usuarios_asignados,
+        ubicaciones=ubicaciones
+    )
 
 # INVENTARIO
 @app.route('/inventario')
@@ -50,6 +89,7 @@ def registro():
         usuario_asignado = request.form['usuario_asignado']
         ubicacion = request.form['ubicacion']
         estado = request.form['estado']
+        observaciones = request.form['onservaciones']
 
         cursor.execute("""
             INSERT INTO equipos (
@@ -65,8 +105,9 @@ def registro():
                 usuario_asignado,
                 ubicacion,
                 estado
+                observaciones
             )
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (
             tipo_equipo,
             marca,

@@ -110,13 +110,33 @@ Registro de Equipos
             >
 
             <label>Estado</label>
-            <input 
-                type="text"
-                name="estado"
-                placeholder="Ejemplo: El equipo se encuentra..."
-            >
-            
+            <select name="estado">
 
+                <option value="Disponible">
+                    Disponible
+                </option>
+
+                <option value="Activo">
+                    Activo
+                </option>
+
+                <option value="En reparación">
+                   En reparación 
+                </option>
+
+                <option value="De baja">
+                    De baja 
+                </option>
+
+            </select>
+
+            <label>Observaciones</label>
+            <textarea 
+                name="observaciones"
+                placeholder="Observaciones del equipo..."
+            ></textarea>
+
+            
             <div class="buttons">
 
                 <button type="submit" class="save-btn">
