@@ -1,12 +1,12 @@
 /* ========================= */
-/* REGISTRO */
-/*EDITAR_EQUIPO*/
+/* REGISTRO / EDITAR EQUIPO */
 /* ========================= */
 
 .form-container{
     display: flex;
     gap: 25px;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .form-box{
@@ -15,13 +15,15 @@
 
     background-color: #161616;
     border: 2px solid #0b43c9;
-    border-radius: 20px;
+    border-radius: 10px;
 
     padding: 25px;
 }
 
 .form-box h2{
     margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 500;
 }
 
 .form-box form{
@@ -38,93 +40,22 @@
 .form-box input,
 .form-box select,
 .form-box textarea{
-    background-color: #0f0f0f;
-    border: 1px solid #333;
-    border-radius: 10px;
-
-    padding: 12px;
-    color: white;
-
-    outline: none;
-}
-
-.form-box textarea{
-    resize: none;
-    height: 100px;
-}
-
-.buttons{
-    display: flex;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.save-btn{
-    background-color: #0b43c9;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.cancel-btn{
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/* FORMULARIO REGISTRO */
-
-.form-container{
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.form-box{
-    flex: 1;
-    background-color: #161616;
-    border: 2px solid #0b43c9;
-    border-radius: 20px;
-    padding: 25px;
-}
-
-.form-box h2{
-    margin-bottom: 20px;
-    font-size: 22px;
-    font-weight: 500;
-}
-
-.form-box form{
-    display: flex;
-    flex-direction: column;
-}
-
-.form-box label{
-    margin-top: 12px;
-    margin-bottom: 8px;
-    font-size: 15px;
-}
-
-.form-box input,
-.form-box textarea{
     width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #333;
+
     background-color: #0f0f0f;
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    padding: 12px;
     color: white;
     font-size: 14px;
+
     outline: none;
 }
 
 .form-box textarea{
-    min-height: 100px;
     resize: none;
+    min-height: 100px;
 }
 
 .buttons{
@@ -139,8 +70,10 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+
     font-size: 15px;
     font-weight: 600;
+
     transition: 0.3s;
 }
 

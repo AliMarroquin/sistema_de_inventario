@@ -29,6 +29,21 @@ Inventario TI
     placeholder="Buscar ubicación..."
     class="search-input">
 
+    
+    <form method="GET">
+        <select 
+        name="estado" 
+        class="search-input"
+        onchange="this.from.submit()">
+            <option value="">Todos</option>
+            <option value="Disponible">Disponible</option>
+            <option value="Activo">Activo</option>
+            <option value="En reparación">En reparación</option>
+            <option value="De baja">De baja</option>
+        </select>
+
+    </form>
+
 </div>
 
 <div class="table-container">
@@ -42,7 +57,7 @@ Inventario TI
                 <th>Modelo</th>
                 <th>Serie</th>
                 <th>Usuario</th>
-                <th>Ubicación</th>
+                <th>Estado</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -58,7 +73,32 @@ Inventario TI
                 <td>{{ equipo[3] }}</td>
                 <td>{{ equipo[4] }}</td>
                 <td>{{ equipo[10] }}</td>
-                <td>{{ equipo[11] }}</td>
+                <td>
+                  {% if equipo[12] == 'Disponible' %}
+                   <span class="estado-disponible">
+                     {{ equipo[12] }}
+                   </span>
+
+                   {% elif equipo[12] == 'Activo' %}
+                   <span class="estado-activo">
+                      {{ equipo[12] }}
+                     </span>
+
+                     {% elif equipo[12] == 'En reparación' %}
+                <span class="estado-reparacion">
+                    {{ equipo[12] }}
+                 </span>
+
+                    {% elif equipo[12] == 'De baja' %}
+                  <span class="estado-baja">
+                  {{ equipo[12] }}
+                  </span>
+
+                 {% else %}
+                  {{ equipo[12] }}
+                 {% endif %}
+
+                 </td>
 
                 <td class="actions">
 
@@ -68,6 +108,10 @@ Inventario TI
 
                     <a href="/editar/{{equipo[0]}}" class="edit-btn">
                         <i class="bi bi-pencil-fill"></i>
+                    </a>
+
+                    <a href="/eliminar/{{equipo[0]}}" class="edit-btn">
+                        <i class="bi bi-trash-fill"></i>
                     </a>
 
                 </td>

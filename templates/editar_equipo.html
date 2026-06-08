@@ -106,10 +106,36 @@ Editar Equipo
             >
 
             <label>Estado</label>
+
+            <select name="estado">
+
+             <option value="Disponible"
+             {% if equipo[12] == 'Disponible' %}selected{% endif %}>
+             Disponible
+             </option>
+
+             <option value="Activo"
+              {% if equipo[12] == 'Activo' %}selected{% endif %}>
+             Activo
+             </option>
+
+             <option value="En reparación"
+             {% if equipo[12] == 'En reparación' %}selected{% endif %}>
+              En reparación
+             </option>
+
+             <option value="De baja"
+             {% if equipo[12] == 'De baja' %}selected{% endif %}>
+             De baja
+             </option>
+
+            </select>
+            
+            <label>Observaciones</label>
             <input
                 type="text"
-                name="estado"
-                value="{{ equipo[12] }}"
+                name="observaciones"
+                value="{{ equipo[13] }}"
             >
 
             <div class="buttons">

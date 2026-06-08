@@ -77,5 +77,24 @@ td{
     font-weight: bold;
 }
 
+/* ESTADOS */
 
+.estado-disponible{
+    color: #4CAF50;
+    font-weight: bold;
+}
 
+.estado-activo{
+    color: #2196F3;
+    font-weight: bold;
+}
+
+.estado-reparacion{
+    color: #FFC107;
+    font-weight: bold;
+}
+
+.estado-baja{
+    color: #F44336;
+    font-weight: bold;
+}
