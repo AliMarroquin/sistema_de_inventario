@@ -110,7 +110,10 @@ Inventario TI
                         <i class="bi bi-pencil-fill"></i>
                     </a>
 
-                    <a href="/eliminar/{{equipo[0]}}" class="edit-btn">
+                    <a href="/eliminar/{{equipo[0]}}"
+                     class="delete-btn"
+                     onclick="return confirm('¿Seguro que deseas eliminar este equipo?')"
+>
                         <i class="bi bi-trash-fill"></i>
                     </a>
 

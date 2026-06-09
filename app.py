@@ -97,7 +97,7 @@ def registro():
         usuario_asignado = request.form['usuario_asignado']
         ubicacion = request.form['ubicacion']
         estado = request.form['estado']
-        observaciones = request.form['onservaciones']
+        observacion = request.form['observacion']
 
         cursor.execute("""
             INSERT INTO equipos (
@@ -112,8 +112,8 @@ def registro():
                 software_instalado,
                 usuario_asignado,
                 ubicacion,
-                estado
-                observaciones
+                estado,
+                observacion
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (
@@ -128,7 +128,8 @@ def registro():
             software_instalado,
             usuario_asignado,
             ubicacion,
-            estado
+            estado,
+            observacion
         ))
 
         conexion.commit()
@@ -186,6 +187,7 @@ def editar(id):
         usuario_asignado = request.form['usuario_asignado']
         ubicacion = request.form['ubicacion']
         estado = request.form['estado']
+        observacion = request.form['observacion']
 
         cursor.execute("""
             UPDATE equipos
@@ -201,9 +203,10 @@ def editar(id):
                 software_instalado = %s,
                 usuario_asignado = %s,
                 ubicacion = %s,
-                estado = %s
+                estado = %s,
+                observacion = %s
             WHERE id = %s
-        """, (
+        """,(
             tipo_equipo,
             marca,
             modelo,
@@ -216,6 +219,7 @@ def editar(id):
             usuario_asignado,
             ubicacion,
             estado,
+            observacion,
             id
         ))
 
@@ -245,5 +249,27 @@ def editar(id):
     )
 
 
+
+ # ELIMINAR EQUIPO
+@app.route('/eliminar/<int:id>')
+def eliminar_equipo(id):
+
+    cursor.execute(
+        "DELETE FROM historial WHERE equip_id = %s",
+        (id,)
+    )
+
+    cursor.execute(
+        "DELETE FROM equipos WHERE id = %s",
+        (id,)
+    )
+
+    conexion.commit()
+
+    return redirect('/inventario')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+   

@@ -98,3 +98,14 @@ td{
     color: #F44336;
     font-weight: bold;
 }
+
+/*boton-eliminar*/
+.delete-btn{
+    color: #F44336;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.edit-btn:hover{
+    color: #ff6b6b;
+}
