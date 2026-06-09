@@ -1,8 +1,5 @@
 {% extends 'base.html'%}
 
-{% block title %}
-Inventario
-{% endblock %}
 
 {% block page_litle %}
 Inventario TI
@@ -29,20 +26,41 @@ Inventario TI
     placeholder="Buscar ubicación..."
     class="search-input">
 
-    
-    <form method="GET">
-        <select 
-        name="estado" 
-        class="search-input"
-        onchange="this.from.submit()">
-            <option value="">Todos</option>
-            <option value="Disponible">Disponible</option>
-            <option value="Activo">Activo</option>
-            <option value="En reparación">En reparación</option>
-            <option value="De baja">De baja</option>
-        </select>
+   <form method="GET" action="/inventario">
 
-    </form>
+    <select
+        name="estado"
+        class="search-input"
+        onchange="this.form.submit()">
+
+        <option value=""
+            {% if not estado_actual %}selected{% endif %}>
+            Todos
+        </option>
+
+        <option value="Disponible"
+            {% if estado_actual == 'Disponible' %}selected{% endif %}>
+            Disponible
+        </option>
+
+        <option value="Activo"
+            {% if estado_actual == 'Activo' %}selected{% endif %}>
+            Activo
+        </option>
+
+        <option value="En reparación"
+            {% if estado_actual == 'En reparación' %}selected{% endif %}>
+            En reparación
+        </option>
+
+        <option value="De baja"
+            {% if estado_actual == 'De baja' %}selected{% endif %}>
+            De baja
+        </option>
+
+    </select>
+
+</form>
 
 </div>
 

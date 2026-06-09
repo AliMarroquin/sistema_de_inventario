@@ -60,23 +60,31 @@ def dashboard():
     )
 
 # INVENTARIO
+
+
 @app.route('/inventario')
 def inventario():
-    
+
     estado = request.args.get('estado')
 
     if estado:
-        cursor.execute("SELECT * FROM equipos WHERE estado = %s", (estado,))
-
+        cursor.execute(
+            "SELECT * FROM equipos WHERE estado = %s",
+            (estado,)
+        )
     else:
-        cursor.execute("SELECT * FROM equipos")
-
+        cursor.execute(
+            "SELECT * FROM equipos"
+        )
 
     equipos = cursor.fetchall()
 
     return render_template(
         'inventario.html',
-        equipos=equipos)
+        equipos=equipos,
+        estado_actual=estado
+    )
+
 
 
 # REGISTRO
