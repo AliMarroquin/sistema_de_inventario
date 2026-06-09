@@ -97,6 +97,10 @@ def registro():
         marca = request.form['marca']
         modelo = request.form['modelo']
         numero_serie = request.form['numero_serie']
+
+        if numero_serie.strip() == '':
+          numero_serie = None
+          
         procesador = request.form['procesador']
         ram = request.form['ram']
         disco_duro = request.form['disco_duro']
@@ -107,8 +111,26 @@ def registro():
         estado = request.form['estado']
         observacion = request.form['observacion']
 
-        cursor.execute("""
-            INSERT INTO equipos (
+
+        try:
+            cursor.execute("""
+                INSERT INTO equipos (
+                    tipo_equipo,
+                    marca,
+                    modelo,
+                    numero_serie,
+                    procesador,
+                    ram,
+                    disco_duro,
+                    sistema_operativo,
+                    software_instalado,
+                    usuario_asignado,
+                    ubicacion,
+                    estado,
+                    observacion
+                )
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (
                 tipo_equipo,
                 marca,
                 modelo,
@@ -122,29 +144,20 @@ def registro():
                 ubicacion,
                 estado,
                 observacion
-            )
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """, (
-            tipo_equipo,
-            marca,
-            modelo,
-            numero_serie,
-            procesador,
-            ram,
-            disco_duro,
-            sistema_operativo,
-            software_instalado,
-            usuario_asignado,
-            ubicacion,
-            estado,
-            observacion
-        ))
+            ))
 
-        conexion.commit()
+            conexion.commit()
+            return redirect('/inventario')
 
-        return redirect('/inventario')
+        except Exception as e:
+            conexion.rollback()
+            print("ERROR REAL:", e)
+            raise
 
     return render_template('registro.html')
+
+
+
 
 ###CONEXION A VER_EQUIPO###
 @app.route('/ver/<int:id>')
