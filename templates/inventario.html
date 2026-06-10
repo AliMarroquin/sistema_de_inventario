@@ -16,22 +16,25 @@ Inventario TI
 
 <div class="top-bar">
 
-    <input 
-    type="text" 
-    placeholder="Buscar Equipo..."
-    class="search-input">
+  <form method="GET" action="/inventario" class="top-bar">
 
-    <input 
-    type="text"
-    placeholder="Buscar ubicación..."
-    class="search-input">
+    <input
+        type="text"
+        name="equipo"
+        placeholder="Buscar equipo..."
+        class="search-input"
+        value="{{ equipo_actual or '' }}">
 
-   <form method="GET" action="/inventario">
+    <input
+        type="text"
+        name="ubicacion"
+        placeholder="Buscar ubicación..."
+        class="search-input"
+        value="{{ ubicacion_actual or '' }}">
 
     <select
         name="estado"
-        class="search-input"
-        onchange="this.form.submit()">
+        class="search-input">
 
         <option value=""
             {% if not estado_actual %}selected{% endif %}>
@@ -60,6 +63,10 @@ Inventario TI
 
     </select>
 
+    <button type="submit">
+        Buscar
+    </button>
+
 </form>
 
 </div>
@@ -73,8 +80,8 @@ Inventario TI
                 <th>Tipo</th>
                 <th>Marca</th>
                 <th>Modelo</th>
-                <th>Serie</th>
                 <th>Usuario</th>
+                <th>Ubicación</th>
                 <th>Estado</th>
                 <th>Acciones</th>
             </tr>
@@ -89,8 +96,8 @@ Inventario TI
                 <td>{{ equipo[1] }}</td>
                 <td>{{ equipo[2] }}</td>
                 <td>{{ equipo[3] }}</td>
-                <td>{{ equipo[4] }}</td>
                 <td>{{ equipo[10] }}</td>
+                <td>{{ equipo[11] }}</td>
                 <td>
                   {% if equipo[12] == 'Disponible' %}
                    <span class="estado-disponible">

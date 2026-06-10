@@ -59,30 +59,59 @@ def dashboard():
         ubicaciones=ubicaciones
     )
 
-# INVENTARIO
 
-
+#--------------------#
+#-----INVENTARIO-----#
+#--------------------#
 @app.route('/inventario')
 def inventario():
 
-    estado = request.args.get('estado')
+    estado = request.args.get('estado', '')
+    equipo = request.args.get('equipo', '')
+    ubicacion = request.args.get('ubicacion', '')
+
+    consulta = """
+        SELECT *
+        FROM equipos
+        WHERE 1=1
+    """
+
+    parametros = []
 
     if estado:
-        cursor.execute(
-            "SELECT * FROM equipos WHERE estado = %s",
-            (estado,)
-        )
-    else:
-        cursor.execute(
-            "SELECT * FROM equipos"
-        )
+        consulta += " AND estado = %s"
+        parametros.append(estado)
+
+    if equipo:
+        consulta += """
+            AND (
+                tipo_equipo ILIKE %s OR
+                marca ILIKE %s OR
+                modelo ILIKE %s OR
+                numero_serie ILIKE %s
+            )
+        """
+        parametros.extend([
+            f"%{equipo}%",
+            f"%{equipo}%",
+            f"%{equipo}%",
+            f"%{equipo}%"
+        ])
+
+    if ubicacion:
+        consulta += " AND ubicacion ILIKE %s"
+        parametros.append(f"%{ubicacion}%")
+
+    cursor.execute(consulta, tuple(parametros))
 
     equipos = cursor.fetchall()
 
     return render_template(
         'inventario.html',
         equipos=equipos,
-        estado_actual=estado
+        estado_actual=estado,
+        equipo_actual=equipo,
+        ubicacion_actual=ubicacion
     )
 
 
