@@ -53,6 +53,16 @@ td{
     font-size: 16px;
 }
 
+.view-btn,
+.edit-btn,
+.delete-btn{
+    border: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 /* Botón ver */
 .view-btn{
     background-color: #3b82f6;
@@ -63,6 +73,19 @@ td{
 .edit-btn{
     background-color: #facc15;
     color: black;
+}
+
+/* Botón eliminar */
+.delete-btn{
+    background-color: #dc2626;
+    color: white;
+}
+
+/* Efecto hover */
+.view-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover{
+    opacity: 0.9;
 }
 
 /* Estados */
@@ -99,13 +122,13 @@ td{
     font-weight: bold;
 }
 
-/*boton-eliminar*/
+.view-btn,
+.edit-btn,
 .delete-btn{
-    color: #F44336;
-    text-decoration: none;
-    font-size: 18px;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.edit-btn:hover{
-    color: #ff6b6b;
-}

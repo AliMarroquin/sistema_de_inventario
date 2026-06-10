@@ -103,6 +103,7 @@ def registro():
           
         procesador = request.form['procesador']
         ram = request.form['ram']
+        
         disco_duro = request.form['disco_duro']
         sistema_operativo = request.form['sistema_operativo']
         software_instalado = request.form['software_instalado']
@@ -276,7 +277,7 @@ def editar(id):
 def eliminar_equipo(id):
 
     cursor.execute(
-        "DELETE FROM historial WHERE equip_id = %s",
+        "DELETE FROM historial WHERE equipo_id = %s",
         (id,)
     )
 
